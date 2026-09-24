@@ -1,0 +1,6 @@
+{
+  "name": "SUNDARI",
+  "description": "SUNDARI - Beautiful Shopping, Better Prices. Complete shopping app with catalog, cart, checkout, payments, and account management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

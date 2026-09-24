@@ -1,0 +1,871 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>SUNDARI — Home</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f4dfe7;font-family:Arial,Helvetica,sans-serif;color:#321529}
+button{font:inherit;border:0}img{display:block}
+.app{width:100%;max-width:430px;min-height:100vh;margin:auto;background:#fff9fb;overflow:hidden;box-shadow:0 0 40px #6f17401f;padding-bottom:67px;padding-top:150px}
+.status{height:28px;padding:7px 18px 0;display:flex;justify-content:space-between;font-size:12px;font-weight:700;background:#fff7fa}
+.header{
+position:fixed;top:0;left:50%;transform:translateX(-50%);
+width:100%;max-width:430px;z-index:100;
+padding:12px 16px 10px;background:rgba(255,247,250,.98);
+backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+box-shadow:0 2px 14px #6f174018;
+}
+.toprow{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:45px}
+.brand{display:flex;align-items:center;gap:7px;min-width:0;flex:1}.brand>div:last-child{min-width:0}.mark{width:42px;height:42px;border-radius:50%;background:linear-gradient(145deg,#9d1558,#541031);color:#fff;display:grid;place-items:center;font:700 27px Georgia}.brand h1{margin:0;color:#8e1550;font:700 26px Georgia;letter-spacing:.5px;white-space:nowrap}.brand small{display:block;font-size:8px;letter-spacing:1.1px;color:#7c6871;margin-top:1px}
+.actions{display:flex;gap:7px;align-items:flex-start;flex-shrink:0}.act{position:relative;text-align:center;color:#5d203d;font-size:8px;width:36px;flex:0 0 36px;white-space:nowrap;cursor:pointer}.act .ico{display:grid;place-items:center;width:31px;height:31px;margin:auto;font-size:22px}.badge{position:absolute;right:-2px;top:-2px;background:#db1768;color:#fff;border-radius:10px;padding:2px 5px;font-size:8px}
+.location{font-size:12px;height:38px;border:1px solid #ef9fbd;border-radius:21px;margin-top:12px;display:flex;align-items:center;padding:0 12px;gap:7px;color:#722049;font-size:13px;cursor:pointer}.location b{margin-left:3px;min-width:0}.location .deliveryChevron{margin-left:auto!important;padding-left:14px!important;font-size:18px!important;line-height:1!important;display:flex;align-items:center;justify-content:center}
+.search{height:48px;border:1.5px solid #ef9fbd;border-radius:25px;margin-top:9px;display:flex;align-items:center;padding:0 6px 0 15px;background:#fff}.search input{border:0;outline:0;flex:1;font-size:15px;color:#5d4a54}.search .glass{font-size:25px;margin-right:9px;cursor:pointer}.search .sbtn{width:38px;height:38px;border-radius:50%;background:#fff0f6;font-size:18px;cursor:pointer}.search .cam{margin-left:4px}
+.hero{margin:7px 14px 0;border-radius:15px;overflow:hidden;height:252px;position:relative;background:#f8dce7}.hero img{width:100%;height:100%;object-fit:cover}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,246,249,.96) 0%,rgba(255,246,249,.68) 40%,rgba(255,246,249,0) 74%)}
+.herotxt{position:absolute;z-index:2;left:17px;top:24px;width:54%}.herotxt .tag{font-weight:800;color:#8a184f;font-size:16px}.herotxt h2{font:700 42px Georgia;color:#b20d59;margin:2px 0 3px;line-height:.9}.herotxt p{font-weight:700;font-size:12px;line-height:1.45;margin:0 0 8px}.shop{background:#a90e59;color:white;border-radius:20px;padding:8px 16px;font-weight:800;font-size:13px;cursor:pointer}.dots{position:absolute;z-index:3;bottom:9px;left:50%;transform:translateX(-50%);display:flex;gap:5px}.dots i{width:7px;height:7px;background:#fff;border:1px solid #bd3a76;border-radius:50%}.dots i.active{background:#c81061;width:21px;border-radius:8px}
+.section{padding:0 14px;margin-top:18px}.sectitle{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px}.sectitle h3{margin:0;font:700 21px Georgia}.view{font-size:12px;color:#bf145f;font-weight:800;cursor:pointer}
+.cats{display:flex;gap:12px;overflow:auto;scrollbar-width:none}.cats::-webkit-scrollbar{display:none}.cat{min-width:69px;text-align:center;cursor:pointer}.catimg{width:66px;height:66px;border-radius:50%;object-fit:cover;border:2px solid #ffd2e2;box-shadow:0 3px 10px #8e15501a}.cat span{font-size:10px;font-weight:700;display:block;margin-top:5px;white-space:nowrap}
+.flash{margin:15px 14px 0;background:linear-gradient(145deg,#ffe6f0,#fff0f6);border:1px solid #ffd0e1;border-radius:17px;padding:10px}.flashhead{display:flex;align-items:center;gap:7px;margin:0 3px 8px}.flashhead b{font:italic 700 20px Georgia;color:#b20c5a}.ends{margin-left:auto;background:#d61365;color:#fff;border-radius:5px;padding:5px 6px;font-size:10px;font-weight:800}.cards{display:flex;gap:8px;overflow:auto;scrollbar-width:none}.cards::-webkit-scrollbar{display:none}.card{min-width:118px;width:118px;background:#fff;border-radius:11px;border:1px solid #f1dce5;overflow:hidden;position:relative;cursor:pointer}.cardpic{height:105px;background:#faf2f5;position:relative}.cardpic img{width:100%;height:100%;object-fit:cover}.heart{position:absolute;right:5px;top:5px;background:#fff;width:24px;height:24px;border-radius:50%;font-size:14px;color:#d11665;cursor:pointer;border:0}.off{position:absolute;left:5px;bottom:5px;background:#d31161;color:#fff;border-radius:6px;padding:3px 5px;font-size:9px;font-weight:800}.body{padding:7px}.price{font-size:15px;font-weight:900}.old{font-size:9px;color:#999;text-decoration:line-through;margin-left:4px}.stars{font-size:9px;color:#e89a00;margin-top:3px}.add{width:100%;background:#ca1264;color:#fff;border-radius:12px;padding:6px 2px;margin-top:6px;font-size:10px;font-weight:800;cursor:pointer}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.promo{height:126px;border-radius:14px;overflow:hidden;position:relative;background:#f4e4ef;cursor:pointer}.promo img{position:absolute;right:0;bottom:0;width:58%;height:100%;object-fit:cover}.promo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(247,238,248,.96) 0%,rgba(247,238,248,.72) 48%,transparent 80%)}.promoText{position:relative;z-index:2;width:61%;padding:13px 9px}.promoText h4{font:700 17px Georgia;margin:0 0 4px;color:#8a174d}.promoText p{font-size:9px;line-height:1.3;margin:0 0 8px;color:#6d5862}.promoText button{background:#9e1456;color:white;border-radius:15px;padding:6px 9px;font-size:9px;font-weight:800;cursor:pointer}
+.trending{display:flex;gap:9px;overflow:auto;scrollbar-width:none}.trend{min-width:112px;height:125px;border:1px solid #f0dce5;border-radius:12px;overflow:hidden;background:#fff;position:relative;cursor:pointer}.trend img{width:100%;height:90px;object-fit:cover;background:#f5e8ee}.trend span{font-size:10px;font-weight:800;padding:6px;display:block}
+.bottom{position:fixed;left:50%;transform:translateX(-50%);bottom:0;width:100%;max-width:430px;height:67px;background:rgba(255,249,251,.98);border-top:1px solid #eedce5;display:flex;justify-content:space-around;align-items:center;z-index:20;padding-bottom:env(safe-area-inset-bottom);height:calc(67px + env(safe-area-inset-bottom))}.navitem{text-align:center;color:#6c5962;font-size:10px;min-width:52px;cursor:pointer;background:none;border:0}.navitem .nicon{font-size:22px;line-height:23px}.navitem.active{color:#c10f60;font-weight:800}.dealnav{width:52px;height:52px;border-radius:50%;margin-top:-22px;background:#c80e62;color:#fff;border:4px solid #fff1f6;display:grid;place-items:center;font-size:24px;box-shadow:0 4px 14px #c80e6238}
+.toast{position:fixed;left:50%;bottom:82px;transform:translate(-50%,20px);background:#28131f;color:white;border-radius:20px;padding:10px 15px;font-size:12px;opacity:0;transition:.25s;z-index:99999;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}
+.location{font-size:12px!important;line-height:1.2!important;gap:6px!important}
+.location b{font-size:13px!important}
+.location .pin{font-size:15px!important}
+.location .chev{font-size:13px!important}
+.search{height:40px!important;border-radius:12px!important;padding:0 9px!important;gap:6px!important}
+.search input{font-size:12px!important}
+.search .icon{font-size:16px!important}
+.search button{width:30px!important;height:30px!important;font-size:14px!important}
+.modal{position:fixed;inset:0;background:rgba(38,13,28,.55);z-index:1200;display:none;align-items:flex-end;justify-content:center}
+.modal.show{display:flex}
+.sheet{width:100%;max-width:430px;max-height:92vh;overflow:auto;background:#fff9fb;border-radius:24px 24px 0 0;padding:14px 14px 28px;box-shadow:0 -8px 30px #2b102040}
+.sheetTop{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.sheetTop h3{margin:0;font:700 20px Georgia;color:#7f1748}
+.close{width:34px;height:34px;border-radius:50%;background:#f8e4ed;color:#7f1748;font-size:20px;cursor:pointer}
+.detailImg{width:100%;height:260px;object-fit:cover;border-radius:17px;background:#f5e8ee}
+.detailPrice{font-size:24px;font-weight:900;color:#9f0e55;margin-top:10px}
+.detailOld{font-size:13px;color:#999;text-decoration:line-through;margin-left:7px}
+.detailOff{display:inline-block;background:#d31362;color:#fff;border-radius:6px;padding:4px 7px;font-size:10px;font-weight:800;margin-top:7px}
+.detailStars{color:#e39a00;font-size:12px;margin:8px 0}
+.buyrow{display:flex;gap:8px;margin-top:12px}.buyrow button{flex:1;border-radius:14px;padding:11px;font-weight:800}
+.buy{background:#c80f62;color:#fff}.wish{background:#f7dce8;color:#8d174d}
+.miniGrid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.mini{background:#fff;border:1px solid #efdce5;border-radius:13px;overflow:hidden;cursor:pointer}.mini img{width:100%;height:125px;object-fit:cover;background:#f5e8ee}.mini b{display:block;font-size:11px;padding:7px 7px 2px}.mini small{display:block;padding:0 7px 7px;color:#a30f58;font-weight:800}
+.empty{padding:28px;text-align:center;color:#806b75}
+.categoryCatalog{padding:4px 14px 22px}
+.categoryBlock{margin:0 0 22px}
+.categoryHead{display:flex;align-items:center;justify-content:space-between;margin:0 0 10px}
+.categoryHead h3{margin:0;font:700 19px Georgia;color:#7f1748}
+.categoryHead button{border:0;background:#f7e3ec;color:#951554;border-radius:20px;padding:7px 11px;font-size:11px;font-weight:800;cursor:pointer}
+.categoryGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.catalogCard{background:#fff;border:1px solid #efdce5;border-radius:15px;overflow:hidden;box-shadow:0 2px 10px #7d214014;cursor:pointer}
+.catalogCard img{width:100%;height:165px;object-fit:cover;display:block;background:#f5e8ee}
+.catalogInfo{padding:8px}
+.catalogName{font-size:12px;font-weight:800;color:#382631;min-height:30px;line-height:1.3}
+.catalogPrice{font-size:16px;font-weight:900;color:#a40e58;margin-top:5px}
+.catalogOld{font-size:10px;color:#999;text-decoration:line-through;margin-left:5px}
+.catalogRating{font-size:10px;color:#d18a00;margin-top:4px}
+.catalogAdd{width:100%;border:0;border-radius:9px;background:#c80f62;color:#fff;font-size:11px;font-weight:800;padding:8px;margin-top:7px;cursor:pointer}
+.categoryCount{font-size:10px;color:#987887;font-weight:600}
+.continuousProducts{padding:4px 12px 28px;background:#fff9fb}
+.continuousTitle{display:flex;align-items:center;justify-content:space-between;margin:8px 2px 12px}
+.continuousTitle h2{margin:0;font:700 20px Georgia;color:#7f1748}
+.continuousTitle span{font-size:10px;color:#987887}
+.continuousGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.feedCard{background:#fff;border:1px solid #efdce5;border-radius:15px;overflow:hidden;box-shadow:0 2px 10px #7d214014;cursor:pointer}
+.feedCard img{width:100%;height:175px;object-fit:cover;display:block;background:#f5e8ee}
+.feedInfo{padding:8px}
+.feedName{font-size:12px;font-weight:800;color:#382631;line-height:1.3;min-height:31px}
+.feedCat{display:inline-block;margin-top:4px;padding:3px 6px;border-radius:8px;background:#f8e7ee;color:#8d315d;font-size:9px;font-weight:700}
+.feedPrice{font-size:16px;font-weight:900;color:#a40e58;margin-top:5px}
+.feedOld{font-size:10px;color:#999;text-decoration:line-through;margin-left:5px}
+.feedRating{font-size:10px;color:#d18a00;margin-top:4px}
+.feedAdd{width:100%;border:0;border-radius:9px;background:#c80f62;color:#fff;font-size:11px;font-weight:800;padding:8px;margin-top:7px;cursor:pointer}
+.feedLoader{text-align:center;padding:16px;color:#8e7180;font-size:11px}
+#categoryCatalog{display:none!important}
+.cartFull{position:fixed;inset:0;background:#fff9fb;z-index:500;display:none;overflow:hidden}
+.cartFull.show{display:flex;flex-direction:column}
+.cartTop{height:64px;flex:0 0 64px;background:rgba(255,250,252,.98);border-bottom:1px solid #ead9e2;display:flex;align-items:center;justify-content:space-between;padding:0 12px;box-shadow:0 2px 12px rgba(111,23,64,.08)}
+.cartTopBtn{width:42px;height:42px;border:1px solid #ead9e2;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;color:#351d29;cursor:pointer;box-shadow:0 2px 7px rgba(111,23,64,.07)}
+.cartTopTitle{text-align:center;line-height:1.1;min-width:0}
+.cartTopTitle b{display:block;font-size:17px;color:#321c27}
+.cartTopTitle small{display:block;margin-top:3px;font-size:10px;color:#8a707b}
+.cartScroll{flex:1;overflow:auto;padding:12px 12px 115px;max-width:430px;width:100%;margin:auto}
+.cartDelivery{background:#fff;border:1px solid #ead9e2;border-radius:14px;padding:11px 12px;margin-bottom:10px;display:flex;gap:10px;align-items:center}
+.cartDelivery .pin{width:34px;height:34px;border-radius:10px;background:#fff0f5;display:flex;align-items:center;justify-content:center;font-size:18px}
+.cartDelivery b{font-size:12px;color:#38212c}.cartDelivery small{display:block;font-size:10px;color:#806b75;margin-top:2px}
+.cartDelivery .arrow{margin-left:auto;font-size:20px;color:#9a7c88}
+.cartItemsBox{background:#fff;border:1px solid #ead9e2;border-radius:14px;overflow:hidden}
+.cartItem{display:flex;gap:10px;padding:12px;border-bottom:1px solid #f0e4e9;position:relative}
+.cartItem:last-child{border-bottom:0}
+.cartItemImg{width:82px;height:92px;flex:0 0 82px;border-radius:10px;object-fit:cover;background:#f7edf1}
+.cartItemMain{min-width:0;flex:1;padding-right:20px}
+.cartItemName{font-size:12px;font-weight:700;line-height:1.35;color:#33202a;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.cartItemMeta{font-size:10px;color:#806b75;margin-top:4px}
+.cartItemPrice{margin-top:6px;display:flex;align-items:baseline;gap:6px}.cartItemPrice b{font-size:16px;color:#6f1740}.cartItemPrice del{font-size:10px;color:#a9939c}.cartItemPrice span{font-size:9px;color:#16834b;font-weight:700}
+.qtyRow{display:flex;align-items:center;gap:8px;margin-top:9px}
+.qtyBtn{width:27px;height:27px;border:1px solid #dcc8d1;background:#fff;border-radius:8px;font-size:17px;line-height:1;cursor:pointer;color:#512538}
+.qtyNum{min-width:20px;text-align:center;font-size:12px;font-weight:700}
+.removeItem{position:absolute;right:11px;top:10px;border:0;background:transparent;color:#a47f8d;font-size:15px;cursor:pointer}
+.cartOffer{margin-top:10px;background:#fff;border:1px solid #ead9e2;border-radius:14px;padding:12px}
+.cartOffer b{font-size:12px;color:#39212c}.cartOffer p{font-size:10px;color:#806b75;margin:4px 0 9px}
+.cartCoupon{display:flex;gap:7px}.cartCoupon input{flex:1;min-width:0;height:36px;border:1px solid #decbd4;border-radius:9px;padding:0 10px;font-size:11px;outline:none}.cartCoupon button{height:36px;border:1px solid #6f1740;background:#fff;border-radius:9px;color:#6f1740;font-weight:800;font-size:11px;padding:0 13px;cursor:pointer}
+.cartSummary{margin-top:10px;background:#fff;border:1px solid #ead9e2;border-radius:14px;padding:12px}
+.cartSummary h3{font-size:13px;margin:0 0 9px;color:#38212c}.sumRow{display:flex;justify-content:space-between;font-size:11px;color:#725e68;margin:7px 0}.sumRow.total{border-top:1px dashed #dfccd5;padding-top:10px;margin-top:10px;font-size:14px;color:#321c27;font-weight:800}.sumRow.total b{color:#6f1740}
+.cartBottom{position:fixed;left:50%;transform:translateX(-50%);bottom:0;width:100%;max-width:430px;background:rgba(255,250,252,.98);border-top:1px solid #ead9e2;padding:10px 12px calc(10px + env(safe-area-inset-bottom));box-shadow:0 -4px 18px rgba(111,23,64,.10);z-index:3}
+.cartCheckout{height:48px;width:100%;border:0;border-radius:12px;background:linear-gradient(135deg,#6f1740,#9a285e);color:#fff;font-size:14px;font-weight:800;cursor:pointer;box-shadow:0 7px 18px rgba(111,23,64,.22)}
+.cartEmpty{padding:42px 15px;text-align:center;background:#fff;border:1px solid #ead9e2;border-radius:14px}.cartEmptyIcon{font-size:48px}.cartEmpty b{display:block;margin-top:8px;font-size:15px;color:#35202a}.cartEmpty p{font-size:11px;color:#806b75;margin:5px 0 15px}.cartShopBtn{height:42px;padding:0 20px;border:0;border-radius:10px;background:#6f1740;color:#fff;font-weight:800;cursor:pointer}
+.topProfileLogo{width:30px;height:30px;border-radius:50%;object-fit:cover;border:2px solid #fff;box-shadow:0 1px 6px rgba(111,23,64,.22);background:#f7dfe9;display:block}.topProfileFallback{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#f1b8cf,#8f2455);color:#fff;font-weight:900;font-size:13px;border:2px solid #fff;box-shadow:0 1px 6px rgba(111,23,64,.22)}
+.brand{gap:0!important}
+</style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<header class="header">
+ <div class="toprow">
+  <div class="brand"><div><h1>SUNDARI</h1><small>BEAUTIFUL SHOPPING. BETTER PRICES.</small></div></div>
+  <div class="actions">
+   <div class="act" onclick="openWishlistPage()"><span class="badge">3</span><div class="ico">♡</div>Wishlist</div>
+   <div class="act" onclick="toast('Notifications 🔔')"><span class="badge">5</span><div class="ico">♧</div>Notification</div>
+   <div class="act" onclick="cartPage()"><span class="badge">2</span><div class="ico">🛒</div>Cart</div>
+   <div class="act" onclick="openTopAccountAuth()" role="button" tabindex="0" aria-label="Account"><span id="topProfileFallback" class="topProfileFallback">👤</span><img id="topProfileLogo" class="topProfileLogo" alt="Customer Profile" style="display:none"><small>Account</small></div>
+  </div>
+ </div>
+ <div class="location" onclick="openDeliveryLocation()">📍 <span>Deliver to</span> <b>Lucknow - 226001</b> <span style="margin-left:auto">⌄</span></div>
+ <div class="search"><span class="glass">⌕</span><input id="q" placeholder="Search products, brands and more"><button class="sbtn" onclick="voice()">🎙</button><button class="sbtn cam" onclick="visualSearch()">📷</button></div>
+</header>
+
+<!-- DELIVERY LOCATION / PINCODE MODAL -->
+<div id="deliveryLocationModal" class="deliveryLocationModal" aria-hidden="true">
+  <div class="deliveryLocationSheet" role="dialog" aria-modal="true" aria-labelledby="deliveryLocationTitle">
+    <div class="deliveryLocationHead">
+      <button type="button" class="deliveryLocBack" onclick="closeDeliveryLocation()" aria-label="Back">‹</button>
+      <div><b id="deliveryLocationTitle">Select Delivery Location</b><small>Choose where you want your order delivered</small></div>
+      <button type="button" class="deliveryLocClose" onclick="closeDeliveryLocation()" aria-label="Close">×</button>
+    </div>
+    <div class="deliveryLocationScroll">
+      <button type="button" class="useCurrentLocationBtn" onclick="useCurrentDeliveryLocation()"><span>⌖</span><div><b>Use my current location</b><small>Allow location access to find your area automatically</small></div><strong>›</strong></button>
+      <div class="deliveryOr"><span>OR</span></div>
+      <div class="pinCheckCard">
+        <div class="pinCheckTitle"><span>📍</span><div><b>Enter your pincode</b><small>Check delivery availability in your area</small></div></div>
+        <div class="pinInputRow"><input id="deliveryPincodeInput" type="tel" inputmode="numeric" maxlength="6" placeholder="Enter 6-digit pincode" autocomplete="postal-code"><button type="button" onclick="checkDeliveryPincode()">Check</button></div>
+        <div id="deliveryPincodeResult" class="deliveryPincodeResult" aria-live="polite"></div>
+      </div>
+      <div class="savedLocationTitle"><b>Saved delivery addresses</b><small>Tap an address to use it for delivery</small></div>
+      <div id="headerSavedLocations"></div>
+    </div>
+  </div>
+</div>
+
+<section class="hero">
+ <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=85" alt="Mega Sale" fetchpriority="high" decoding="async">
+ <div class="herotxt"><div class="tag">👑 MEGA. SALE</div><h2>70% OFF</h2><p>Fashion | Beauty | Electronics<br>Home & Kitchen | & More</p><button class="shop" onclick="dealsPage()">Shop Now →</button></div>
+ <div class="dots"><i class="active"></i><i></i><i></i><i></i></div>
+</section>
+
+<section class="section"><div class="sectitle"><h3>Shop by Category</h3><span class="view" onclick="openListing('All Categories')">View All →</span></div><div class="cats" id="cats"></div></section>
+
+<section class="flash"><div class="flashhead"><b>⚡ Flash Sale</b><span class="ends">Ends in　<span id="timer">02:45:32</span></span></div><div class="cards" id="flash"></div></section>
+
+<section class="section"><div class="grid">
+ <div class="promo" onclick="promoPage('Mobile & Accessories')"><img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80" alt="Mobile & Accessories" loading="lazy" decoding="async"><div class="promoText"><h4>Mobile & Accessories</h4><p>Latest Smartphones & More</p><button onclick="event.stopPropagation();promoPage('Mobile & Accessories')">Shop Now →</button></div></div>
+ <div class="promo" onclick="promoPage('Women’s Collection')"><img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=500&q=80" alt="Women’s Collection" loading="lazy" decoding="async"><div class="promoText"><h4>Women's Collection</h4><p>Dresses | Kurtis | Jeans | Tops</p><button onclick="event.stopPropagation();promoPage('Women’s Collection')">Shop Now →</button></div></div>
+ <div class="promo" onclick="promoPage('Beauty Picks')"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=500&q=80" alt="Beauty Picks" loading="lazy" decoding="async"><div class="promoText"><h4>Beauty Picks</h4><p>Makeup | Skincare | Haircare</p><button onclick="event.stopPropagation();promoPage('Beauty Picks')">Shop Now →</button></div></div>
+ <div class="promo" onclick="promoPage('Kitchen Essentials')"><img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=500&q=80" alt="Kitchen Essentials" loading="lazy" decoding="async"><div class="promoText"><h4>Kitchen Essentials</h4><p>Cookware | Storage | Appliances</p><button onclick="event.stopPropagation();promoPage('Kitchen Essentials')">Shop Now →</button></div></div>
+</div></section>
+
+<section class="section"><div class="sectitle"><h3>🔥 Trending Products</h3><span class="view" onclick="openListing('Trending Products')">View All →</span></div><div class="trending" id="trend"></div></section>
+
+<section class="continuousProducts" id="allProductsFeed">
+  <div class="continuousTitle">
+    <h2>🛍️ All Products</h2>
+    <span>1000+ products</span>
+  </div>
+  <div id="continuousGrid" class="continuousGrid"></div>
+  <div id="feedLoader" class="feedLoader">↓ Scroll down to load more products</div>
+</section>
+
+<nav class="bottom">
+ <button class="navitem active" onclick="window.scrollTo({top:0,behavior:'smooth'})"><div class="nicon">⌂</div>Home</button>
+ <button class="navitem" onclick="shopPage()"><div class="nicon">♧</div>Shop</button>
+ <button class="navitem" onclick="dealsPage()"><div class="dealnav">%</div>Deals</button>
+ <button class="navitem" onclick="cartPage()"><div class="nicon">🛒</div>Cart</button>
+ <button class="navitem" onclick="openAccountPage()"><div class="nicon">♙</div>Account</button>
+</nav>
+</div>
+
+<!-- FULL CART -->
+<div id="cartFull" class="cartFull" aria-hidden="true">
+  <div class="cartTop">
+    <button class="cartTopBtn" onclick="closeCartFull()" aria-label="Back">‹</button>
+    <div class="cartTopTitle"><b>Your Cart</b><small id="cartTopCount">0 items</small></div>
+    <button class="cartTopBtn" onclick="closeCartFull()" aria-label="Close">×</button>
+  </div>
+  <div id="cartScroll" class="cartScroll"></div>
+  <div class="cartBottom">
+    <button class="cartCheckout" onclick="cartCheckout()">Proceed to Checkout</button>
+  </div>
+</div>
+
+<!-- CHECKOUT MODAL -->
+<div id="sdCheckout" class="sdCheckout" aria-hidden="true">
+  <div class="sdCheckoutScreen" id="sdCheckoutScreen">
+    <div class="sdCheckoutHeader">
+      <button class="sdCheckoutBack" onclick="sdCheckoutBack()">‹</button>
+      <div class="sdCheckoutTitle" id="sdCheckoutTitle">SELECT PREFERENCES</div>
+      <div class="sdStepPill" id="sdStepPill">STEP 1/2</div>
+    </div>
+
+    <div id="sdPreferenceView" class="sdCheckoutView">
+      <div class="sdPreferenceBody sdPrefProfessional">
+        <div class="sdPrefSection">
+          <div class="sdPrefLabel">Select Size</div>
+          <div class="sdSizeOptions">
+            <button class="sdSizeBtn sdSelected" onclick="sdSelectSize(this)">Free Size</button>
+          </div>
+        </div>
+
+        <div class="sdPrefDivider"></div>
+
+        <div class="sdReturnHead">
+          <b>Do you want Easy Returns?</b>
+          <button onclick="sdShowReturnDetails()">VIEW DETAILS</button>
+        </div>
+
+        <div class="sdReturnChoices">
+          <button class="sdReturnChoice sdReturnSelected" onclick="sdSelectReturn('yes',this)">
+            <span class="sdReturnTop">
+              <b>YES</b>
+              <span>All issue easy<br>returns allowed</span>
+            </span>
+            <strong id="sdYesPrice">₹0</strong>
+            <i class="sdCheck">✓</i>
+          </button>
+          <button class="sdReturnChoice" onclick="sdSelectReturn('no',this)">
+            <span class="sdReturnTop">
+              <b>NO</b>
+              <span>Only wrong/defect<br>item returns allowed</span>
+            </span>
+            <strong id="sdNoPrice">₹0</strong>
+            <em>Special Offer | Save ₹3</em>
+          </button>
+        </div>
+
+        <div class="sdPrefNote">
+          <span>✓</span>
+          <div><b>Easy returns selected</b><small>Get hassle-free returns on eligible issues.</small></div>
+        </div>
+      </div>
+      <div class="sdCheckoutAction">
+        <button onclick="sdGoToReview()">▶▶ Buy Now</button>
+      </div>
+    </div>
+
+    <div id="sdReviewView" class="sdCheckoutView" style="display:none">
+      <div class="sdOfferStrip">₹3 OFF <span>on this order</span></div>
+      <div id="sdReviewContent" class="sdReviewContent"></div>
+      <div class="sdCheckoutSticky">
+        <div><b id="sdReviewTotal">₹0</b><span>₹3 OFF</span><button onclick="sdPriceDetails()">VIEW PRICE DETAILS</button></div>
+        <button onclick="sdGoToPayment()">Continue</button>
+      </div>
+    </div>
+
+    <div id="sdPaymentView" class="sdCheckoutView" style="display:none">
+      <div class="sdOfferStrip">₹3 OFF <span>on this order</span></div>
+      <div class="sdPaymentBody sdPaymentProfessional">
+        <h2>Select payment method</h2>
+        <div id="sdPaymentMethods"></div>
+        <div id="sdPaymentStatus" class="sdPaymentStatus sdPaymentStatusPending">🔒 Payment required before placing the order</div>
+
+        <button class="sdResellRow" type="button" onclick="sdResellInfo()">
+          <span>Reselling the order?</span><b class="sdSaleBadge">Sale</b>
+        </button>
+
+        <div class="sdPaymentPriceAccordion" id="sdPaymentPriceAccordion">
+          <button class="sdPaymentPriceToggle" type="button" onclick="sdTogglePaymentPrice()">
+            <span>Price Details <small>(<span id="sdPaymentItemCount">1</span> Item)</small></span>
+            <span class="sdPaymentPriceChevron" id="sdPaymentPriceChevron">⌄</span>
+          </button>
+          <div class="sdPaymentPriceDropdown" id="sdPaymentPriceDropdown">
+            <div><span>Product Price</span><b id="sdPayDetailMrp">₹0</b></div>
+            <div><span>Product Discount</span><b class="sdPayGreen" id="sdPayDetailDiscount">− ₹0</b></div>
+            <div><span>Special Offer</span><b class="sdPayGreen">− ₹3</b></div>
+            <div class="sdPayGrand"><span>Total Amount</span><b id="sdPayDetailTotal">₹0</b></div>
+          </div>
+        </div>
+      </div>
+      <div class="sdPaymentSticky sdPaymentStickyProfessional">
+        <div><b id="sdPaymentTotal">₹0</b><button onclick="sdPriceDetails()">VIEW PRICE DETAILS</button></div>
+        <button onclick="sdPlaceOrder()">Place Order</button>
+      </div>
+    </div>
+
+    <div id="sdSuccessView" class="sdCheckoutView" style="display:none">
+      <div class="sdSuccess">
+        <div class="sdSuccessIcon">✓</div>
+        <h1>Order Placed!</h1>
+        <p>Your SUNDARI order has been placed successfully.</p>
+        <div class="sdOrderCard">
+          <span>Order ID</span><b id="sdOrderId">SD-000000</b>
+          <span>Payment</span><b id="sdOrderPayment">UPI QR / Scan &amp; Pay</b>
+          <span>Amount</span><b id="sdOrderAmount">₹0</b>
+        </div>
+        <button onclick="sdFinishCheckout()">Continue Shopping</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCT DETAIL PAGE -->
+<div id="productPage" class="productPage" aria-hidden="true">
+  <div id="productPageInner" class="productPageInner">
+    <div class="ppTop">
+      <div class="ppTopLeft">
+        <button class="ppBack" onclick="closeProductPage()" aria-label="Back">‹</button>
+      </div>
+      <div class="ppTopRight">
+        <button class="ppIcon" onclick="ppSearch()" aria-label="Search">⌕</button>
+        <button id="ppHeartTop" class="ppIcon" onclick="ppToggleWish()" aria-label="Wishlist">♡</button>
+        <button class="ppIcon" onclick="closeProductPage();cartPage()" aria-label="Cart">🛒<span id="ppCartBadge" class="ppCartBadge">0</span></button>
+      </div>
+    </div>
+
+    <div class="ppSale">
+      <div class="ppSaleTag">UP TO<br><b>70% OFF</b></div>
+      <div class="ppSaleText">Sale Ends in</div>
+      <div class="ppTimerBox">
+        <span class="ppTimerNum" id="ppHH" aria-label="hours remaining">04</span><span class="ppTimerUnit">h :</span>
+        <span class="ppTimerNum" id="ppMM" aria-label="minutes remaining">17</span><span class="ppTimerUnit">m :</span>
+        <span class="ppTimerNum" id="ppSS" aria-label="seconds remaining">20</span><span class="ppTimerUnit">s</span>
+      </div>
+      <div class="ppClock">◷</div>
+    </div>
+
+    <div class="ppAffiliate"><strong>％ Affiliate</strong> 4% Commission</div>
+
+    <section class="ppHero">
+      <div class="ppImageWrap">
+        <div id="ppImageViewport" class="ppImageViewport" aria-label="Product images"></div>
+        <button class="ppImageArrow left" type="button" aria-label="Previous image" onclick="ppPrevImage()">‹</button>
+        <button class="ppImageArrow right" type="button" aria-label="Next image" onclick="ppNextImage()">›</button>
+        <div id="ppImageCount" class="ppImageCount">1 / 5</div>
+        <button class="ppMore" type="button" onclick="ppNextImage()">▧ More Images</button>
+      </div>
+      <div id="ppDots" class="ppDots"></div>
+      <div id="ppThumbRow" class="ppThumbRow"></div>
+    </section>
+
+    <section class="ppSimilar">
+      <h2 class="ppSectionTitle" id="ppSimilarTitle">3 Similar Products</h2>
+      <div class="ppSimilarRow" id="ppSimilarRow"></div>
+    </section>
+
+    <section class="ppInfo">
+      <div class="ppTitleRow">
+        <h1 id="ppTitle" class="ppTitle"></h1>
+        <div class="ppActionCol">
+          <button id="ppWishAction" class="ppAction" onclick="ppToggleWish()"><span>♥</span><small>Wishlist</small></button>
+          <button class="ppAction" onclick="ppShare()"><span>♧</span><small>Share</small></button>
+        </div>
+      </div>
+      <div class="ppPriceBlock">
+        <span id="ppPrice" class="ppPrice"></span><span id="ppOld" class="ppOld"></span>
+        <span class="ppOffRed">₹18 off</span><span class="ppDealBadge">SALE ⚡ Maha Deal</span>
+      </div>
+      <div class="ppSpecial">₹<span id="ppSpecial"></span> with 1 Special Offer ›</div>
+      <div class="ppDealLine">Deal ends in <span class="ppDealTime">◉ 01h : 17m : 20s</span></div>
+      <div class="ppDiscount">🟢 ₹3 off | Special Discount</div>
+      <div class="ppRatingLine"><span id="ppRating" class="ppRating"></span><span class="ppCount">(550)</span></div>
+    </section>
+
+    <section class="ppBlock">
+      <div class="ppSize">Select Size</div>
+      <button class="ppSizeBtn">Free Size</button>
+    </section>
+
+    <section class="ppBlock">
+      <div class="ppSeller">
+        <div class="ppSellerIcon">🏪</div>
+        <div class="ppSellerText">Sold by <b>SUNDARI Direct</b><br><span class="ppSellerRating">4.8 ★</span></div>
+        <div class="ppChevron">›</div>
+      </div>
+    </section>
+
+    <section class="ppBlock">
+      <div class="ppHighlightsTitle"><span>Product Highlights</span><span class="ppCopy" onclick="toast('Highlights copied ✓')">COPY</span></div>
+      <div class="ppHighlights">
+        <div><div class="ppHighLabel">Net Quantity (N)</div><div class="ppHighValue" id="ppQty">1</div></div>
+        <div><div class="ppHighLabel">Quality / Standard</div><div class="ppHighValue" id="ppFlavour">Premium Grade</div></div>
+      </div>
+      <button type="button" class="ppAdditional" id="ppAdditionalToggle" aria-expanded="false" onclick="ppToggleAdditionalDetails()">
+        <span>Additional Details</span><span class="ppAdditionalChevron" aria-hidden="true">⌄</span>
+      </button>
+      <div class="ppAdditionalPanel" id="ppAdditionalPanel" hidden>
+        <div class="ppDetailRow"><span>Product Type</span><b id="ppDetailType">Fashion & Lifestyle</b></div>
+        <div class="ppDetailRow"><span>Brand</span><b id="ppDetailBrand">SUNDARI</b></div>
+        <div class="ppDetailRow"><span>Product Description</span><b id="ppDetailDescription">Premium quality product designed for everyday use.</b></div>
+        <div class="ppDetailRow"><span>Material / Fabric</span><b id="ppDetailMaterial">As mentioned on product packaging</b></div>
+        <div class="ppDetailRow"><span>Colour / Variant</span><b id="ppDetailVariant">As shown</b></div>
+        <div class="ppDetailRow"><span>Size / Fit</span><b id="ppDetailSize">Free Size / As selected</b></div>
+        <div class="ppDetailRow"><span>Net Quantity</span><b id="ppDetailQty">1</b></div>
+        <div class="ppDetailRow"><span>Country of Origin</span><b id="ppDetailOrigin">India</b></div>
+        <div class="ppDetailRow"><span>What's in the Box</span><b id="ppDetailBox">1 × Product / Set as shown</b></div>
+        <div class="ppDetailRow"><span>Delivery</span><b id="ppDetailDelivery">Available to eligible PIN codes</b></div>
+        <div class="ppDetailRow"><span>Seller</span><b id="ppDetailSeller">SUNDARI Direct</b></div>
+        <div class="ppDetailRow"><span>Payment</span><b id="ppDetailPayment">Secure online payment / UPI QR / PhonePe</b></div>
+        <div class="ppDetailNote">Product details, specifications, warranty and return eligibility may vary by selected product and seller. Please check the information shown before placing your order.</div>
+      </div>
+    </section>
+
+    <section class="ppRecommend">
+      <h2 class="ppSectionTitle">You might also like <small style="float:right;font-size:11px;border:1px solid #ddd;padding:4px;color:#888;font-weight:500">Ad</small></h2>
+      <div id="ppRecRow" class="ppRecRow"></div>
+    </section>
+
+    <section class="ppReviews">
+      <div class="ppReviewHead">Customer Ratings &amp; Reviews</div>
+      <div class="ppReviewGrid">
+        <div class="ppBigRating">
+          <div class="ppBigRatingTop" id="ppBigRating">4.7 ★</div>
+          <div class="ppBigRatingBottom">550 ratings<br>201 reviews</div>
+        </div>
+        <div class="ppBars">
+          <div class="ppBar"><span>Very Good</span><div class="ppBarLine"><i style="width:75%"></i></div><span>277</span></div>
+          <div class="ppBar"><span>Good</span><div class="ppBarLine"><i style="width:42%"></i></div><span>131</span></div>
+          <div class="ppBar"><span>Ok-Ok</span><div class="ppBarLine"><i style="width:23%;background:#f2b515"></i></div><span>75</span></div>
+          <div class="ppBar"><span>Bad</span><div class="ppBarLine"><i style="width:6%;background:#d97920"></i></div><span>15</span></div>
+          <div class="ppBar"><span>Very Bad</span><div class="ppBarLine"><i style="width:14%;background:#df2017"></i></div><span>52</span></div>
+        </div>
+      </div>
+      
+      <div class="ppCustomerPhotos">
+        <div class="ppCustomerPhotosHead">
+          <div class="ppCustomerPhotosTitle">Real Photos</div>
+          <div id="ppCustomerPhotoCount" class="ppPhotoCount">0 customer photos</div>
+        </div>
+        <button class="ppWriteReview" type="button" onclick="openCustomerReview()">✍️ Write a Review &amp; Add Photos</button>
+        <div id="ppCustomerPhotoFeed" class="ppReviewPhotoFeed"></div>
+      </div>
+    </section>
+
+    <section class="ppRelatedSection">
+      <div class="ppRelatedHead">
+        <div>
+          <h2>🛍️ Related Products</h2>
+          <p id="ppRelatedSub">More products you may like</p>
+        </div>
+        <span id="ppRelatedCount">1000+</span>
+      </div>
+      <div id="ppRelatedGrid" class="ppRelatedGrid"></div>
+      <div id="ppRelatedLoader" class="ppRelatedLoader">↓ Scroll down to load more</div>
+    </section>
+  </div>
+  <div class="ppBottom">
+    <button class="ppAdd" onclick="ppAddToCart()">🛒 Add to Cart</button>
+    <button class="ppBuy" onclick="ppBuyNow()">▶▶ Buy Now</button>
+  </div>
+</div>
+
+<!-- REVIEW DETAIL PAGE -->
+<div id="reviewDetailPage" class="reviewDetailPage">
+  <div class="reviewDetailApp">
+    <div class="reviewDetailTop">
+      <button class="reviewDetailBack" type="button" onclick="closeReviewDetailPage()">‹</button>
+      <div class="reviewDetailTopTitle">Customer Review</div>
+      <button class="reviewDetailClose" type="button" onclick="closeReviewDetailPage()">×</button>
+    </div>
+    <div id="reviewDetailContent"></div>
+  </div>
+</div>
+
+<!-- REVIEW WRITE MODAL -->
+<div id="ppReviewModalOverlay" class="ppReviewModalOverlay" onclick="if(event.target===this)closeCustomerReview()">
+  <div class="ppReviewModal">
+    <div class="ppReviewModalHead">
+      <b>Write a Review</b>
+      <button class="ppReviewClose" type="button" onclick="closeCustomerReview()">×</button>
+    </div>
+    <div style="font-size:13px;color:#777">Your review for <b id="ppReviewProductName"></b></div>
+    <div id="ppReviewStars" class="ppStars">
+      <button class="ppStarBtn active" type="button" onclick="setReviewRating(1)">★</button>
+      <button class="ppStarBtn active" type="button" onclick="setReviewRating(2)">★</button>
+      <button class="ppStarBtn active" type="button" onclick="setReviewRating(3)">★</button>
+      <button class="ppStarBtn active" type="button" onclick="setReviewRating(4)">★</button>
+      <button class="ppStarBtn active" type="button" onclick="setReviewRating(5)">★</button>
+    </div>
+    <textarea id="ppReviewText" class="ppReviewInput" placeholder="Share your experience with this product..."></textarea>
+    <button class="ppPhotoPicker" type="button" onclick="document.getElementById('ppReviewPhotoInput').click()">
+      📷 Add Product Photos
+    </button>
+    <input id="ppReviewPhotoInput" type="file" accept="image/*" multiple hidden onchange="previewReviewPhotos(event)">
+    <div id="ppSelectedPhotos" class="ppSelectedPhotos"></div>
+    <button class="ppSubmitReview" type="button" onclick="submitCustomerReview()">Submit Review</button>
+    <div class="ppReviewNote">Share genuine customer photos and experience to help fellow shoppers.</div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="ppLightbox" class="ppLightbox" onclick="if(event.target===this)closeReviewLightbox()">
+  <button class="ppLightboxClose" type="button" onclick="closeReviewLightbox()">×</button>
+  <img id="ppLightboxImg" src="" alt="Customer review photo">
+</div>
+
+<!-- AUTH MODAL -->
+<section id="sundariAuthPage" class="sundariAuthPage" aria-hidden="true">
+  <button class="authClose" type="button" onclick="closeAuthPage()" aria-label="Close">×</button>
+  <div class="authCard">
+    <div class="authBrand"><div class="authLogo">S</div><h1>Welcome to SUNDARI</h1><p>Beautiful Shopping. Better Prices.</p></div>
+    <div class="authTabs"><button class="authTab active" id="authLoginTab" onclick="switchAuthTab('login')">Login</button><button class="authTab" id="authSignupTab" onclick="switchAuthTab('signup')">Sign Up</button></div>
+    <div id="authMsg" class="authMsg"></div>
+    <form id="authLoginForm" class="authForm active" onsubmit="submitAuthLogin(event)">
+      <div class="authField"><label>Mobile Number / Email</label><input id="authLoginId" required placeholder="Enter mobile or email" autocomplete="username"></div>
+      <div class="authField"><label>Password</label><div class="authPasswordWrap"><input id="authLoginPassword" required type="password" placeholder="Enter password" autocomplete="current-password"><button class="authViewPassword" type="button" onclick="toggleAuthPassword('authLoginPassword',this)" aria-label="View password" title="View password">👁</button></div></div>
+      <button class="authSubmit" type="submit">Login to SUNDARI</button>
+      <div class="authHint">Demo ID: <b>demo@sundari.com</b><br>Demo Password: <b>Sundari@123</b></div>
+    </form>
+    <form id="authSignupForm" class="authForm" onsubmit="submitAuthSignup(event)">
+      <div class="authField"><label>Full Name</label><input id="authSignupName" required maxlength="60" placeholder="Enter your full name" autocomplete="name"></div>
+      <div class="authField"><label>Mobile Number / Email</label><input id="authSignupId" required placeholder="Enter mobile or email" autocomplete="username"></div>
+      <div class="authField"><label>Create Password</label><div class="authPasswordWrap"><input id="authSignupPassword" required type="password" minlength="6" placeholder="Minimum 6 characters" autocomplete="new-password"><button class="authViewPassword" type="button" onclick="toggleAuthPassword('authSignupPassword',this)" aria-label="View password" title="View password">👁</button></div></div>
+      <button class="authSubmit" type="submit">Create Account &amp; Continue</button>
+      <div class="authHint">By creating an account, you agree to SUNDARI Terms of Service.</div>
+    </form>
+    <div class="authSecure">🔒 Secure local demo session &nbsp;•&nbsp; ✓ Account protected</div>
+  </div>
+</section>
+
+<!-- ACCOUNT MODAL -->
+<section id="accountPage" class="accountPage" aria-hidden="true">
+  <div class="accountScreen">
+    <header class="accountHeader">
+      <button class="accountBack" onclick="closeAccountPage()" aria-label="Back">‹</button>
+      <div class="accountHeaderTitle">My Account</div>
+      <button class="accountClose" onclick="closeAccountPage()" aria-label="Close">×</button>
+    </header>
+
+    <div class="accountBody">
+      <section class="accountProfileCard">
+        <div class="accountAvatarWrap">
+          <div class="accountAvatar" id="accountAvatar">
+            <span id="accountAvatarInitial">S</span>
+            <img id="accountAvatarImg" alt="Profile photo">
+          </div>
+          <button class="accountCameraBtn" type="button" onclick="document.getElementById('accountPhotoInput').click()" aria-label="Change profile photo">✎</button>
+          <input id="accountPhotoInput" type="file" accept="image/*" hidden onchange="accountUploadPhoto(event)">
+        </div>
+        <div class="accountProfileInfo">
+          <div class="accountNameLine">
+            <b id="accountCustomerName">SUNDARI Customer</b>
+            <button type="button" onclick="accountEditName()" aria-label="Edit name">✎</button>
+          </div>
+          <div class="accountPhone" id="accountCustomerPhone">Welcome to SUNDARI</div>
+          <div class="accountMember">SUNDARI Member</div>
+        </div>
+      </section>
+
+      <section class="accountQuickGrid">
+        <button onclick="openOrdersPage();closeAccountPage()"><span>📦</span><b>My Orders</b><small>Track &amp; manage</small></button>
+        <button onclick="openWishlistPage();closeAccountPage()"><span>♡</span><b>Wishlist</b><small>Saved products</small></button>
+        <button onclick="accountQuick('Coupons')"><span>🎟</span><b>Coupons</b><small>Offers for you</small></button>
+        <button onclick="accountQuick('Help')"><span>?</span><b>Help Centre</b><small>Support &amp; FAQs</small></button>
+      </section>
+
+      <div class="accountSectionTitle">Account Settings</div>
+      <section class="accountList">
+        <button onclick="openProfilePage();closeAccountPage()"><span class="accListIcon">👤</span><div><b>Profile &amp; Name</b><small>Change your name and profile photo</small></div><i>›</i></button>
+        <button onclick="openAddressesPage();closeAccountPage()"><span class="accListIcon">⌖</span><div><b>My Addresses</b><small>Manage delivery addresses</small></div><i>›</i></button>
+        <button onclick="openPaymentMethodsPage();closeAccountPage()"><span class="accListIcon">₹</span><div><b>Payment Methods</b><small>Manage saved payment options</small></div><i>›</i></button>
+        <button onclick="accountQuick('Notifications')"><span class="accListIcon">♧</span><div><b>Notifications</b><small>Offers, orders and updates</small></div><i>›</i></button>
+        <button onclick="accountQuick('Privacy')"><span class="accListIcon">▣</span><div><b>Privacy &amp; Security</b><small>Keep your account secure</small></div><i>›</i></button>
+      </section>
+
+      <div class="accountSectionTitle">Customer Support</div>
+      <section class="accountList">
+        <button onclick="accountQuick('Help Centre')"><span class="accListIcon">?</span><div><b>Help Centre</b><small>Get help with your order</small></div><i>›</i></button>
+        <button onclick="accountQuick('Terms & Policies')"><span class="accListIcon">✓</span><div><b>Terms, Policies &amp; Information</b><small>Read SUNDARI policies</small></div><i>›</i></button>
+      </section>
+
+      <button class="accountLogout" type="button" onclick="accountLogout()">Logout</button>
+      <div class="accountVersion">SUNDARI • Shopping made beautiful</div>
+    </div>
+  </div>
+</section>
+
+<!-- MY ADDRESSES MODAL -->
+<section id="sundariAddressesPage" class="sundariAddressesPage" aria-hidden="true">
+  <header class="addressesTop">
+    <button class="addressesBack" onclick="closeAddressesPage()" aria-label="Back">‹</button>
+    <div class="addressesTitle"><b>My Addresses</b><small>Manage your delivery addresses</small></div>
+    <button class="addressesClose" onclick="closeAddressesPage()" aria-label="Close">×</button>
+  </header>
+  <div class="addressesScroll">
+    <div class="addressInfo"><span>📍</span><div><b>Delivery addresses</b><small>Save your addresses for faster checkout</small></div></div>
+    <button class="addAddressBtn" type="button" onclick="openAddAddressForm()"><span>＋</span><div><b>Add New Address</b><small>Add a new delivery address</small></div><strong>›</strong></button>
+    <div id="addressList"></div>
+    <div id="addressEmpty" class="addressEmpty"><div>⌖</div><b>No saved addresses</b><small>Add your first delivery address to make checkout faster.</small><button onclick="openAddAddressForm()">＋ Add New Address</button></div>
+    <div class="addressBottomSpace"></div>
+  </div>
+</section>
+
+<!-- ADD ADDRESS FORM -->
+<section id="sundariAddAddressPage" class="sundariAddAddressPage" aria-hidden="true">
+  <header class="addressesTop">
+    <button class="addressesBack" onclick="closeAddAddressForm()" aria-label="Back">‹</button>
+    <div class="addressesTitle"><b id="addressFormTitle">Add New Address</b><small id="addressFormSubtitle">Enter your delivery details</small></div>
+    <button class="addressesClose" onclick="closeAddAddressForm()" aria-label="Close">×</button>
+  </header>
+  <div class="addressesFormScroll">
+    <div class="formAddressType"><b>Save address as</b><div><button type="button" class="typeBtn active" data-type="Home" onclick="selectAddressType(this)">🏠 Home</button><button type="button" class="typeBtn" data-type="Work" onclick="selectAddressType(this)">💼 Work</button><button type="button" class="typeBtn" data-type="Other" onclick="selectAddressType(this)">📍 Other</button></div></div>
+    <section class="addressFormCard">
+      <label><span>FULL NAME</span><input id="addrName" type="text" placeholder="Enter full name" maxlength="60"></label>
+      <label><span>MOBILE NUMBER</span><input id="addrMobile" type="tel" inputmode="numeric" maxlength="10" placeholder="10-digit mobile number"></label>
+      <label><span>PINCODE</span><input id="addrPin" type="tel" inputmode="numeric" maxlength="6" placeholder="6-digit pincode"></label>
+      <label><span>HOUSE / FLAT / BUILDING</span><input id="addrHouse" type="text" maxlength="120" placeholder="House no., flat, building name"></label>
+      <label><span>AREA / STREET / LOCALITY</span><input id="addrArea" type="text" maxlength="150" placeholder="Area, street, locality"></label>
+      <label><span>CITY</span><input id="addrCity" type="text" maxlength="60" placeholder="City"></label>
+      <label><span>STATE</span><input id="addrState" type="text" maxlength="60" placeholder="State"></label>
+      <label><span>LANDMARK <em>OPTIONAL</em></span><input id="addrLandmark" type="text" maxlength="100" placeholder="Nearby landmark"></label>
+    </section>
+    <button class="saveAddressBtn" id="saveAddressBtn" type="button" onclick="saveNewAddress()">Save Address <b>✓</b></button>
+    <div class="addressPrivacy"><span>🔒</span><small>Your address is securely saved on this device and used only for delivery.</small></div>
+  </div>
+</section>
+
+<!-- PAYMENT METHODS MODAL -->
+<section id="sundariPaymentPage" class="sundariPaymentPage" aria-hidden="true">
+  <header class="paymentTop">
+    <button class="paymentBack" onclick="closePaymentMethodsPage()" aria-label="Back">‹</button>
+    <div class="paymentTitle"><b>Payment Methods</b><small>Manage your saved payment options</small></div>
+    <button class="paymentClose" onclick="closePaymentMethodsPage()" aria-label="Close">×</button>
+  </header>
+  <div class="paymentScroll">
+    <div class="paymentSecure"><span>🔒</span><div><b>Safe &amp; Secure Payments</b><small>Your payment information is protected and stored securely on this device.</small></div><strong>✓</strong></div>
+    <button class="addPaymentMain" type="button" onclick="openPaymentForm()"><span>＋</span><div><b>Add New Payment Method</b><small>Credit / Debit Card, UPI or other options</small></div><strong>›</strong></button>
+    <div class="paymentSectionHead"><div><b>Saved Payment Methods</b><small id="paymentMethodCount">0 methods saved</small></div></div>
+    <div id="paymentMethodsList"></div>
+    <div id="paymentEmpty" class="paymentEmpty"><div>₹</div><b>No saved payment methods</b><small>Add a card or UPI ID for faster checkout.</small><button onclick="openPaymentForm()">＋ Add New Payment</button></div>
+    <div class="paymentBottomSpace"></div>
+  </div>
+</section>
+
+<!-- ADD PAYMENT FORM -->
+<section id="sundariPaymentFormPage" class="sundariPaymentPage" aria-hidden="true">
+  <header class="paymentTop">
+    <button class="paymentBack" onclick="closePaymentForm()" aria-label="Back">‹</button>
+    <div class="paymentTitle"><b id="paymentFormTitle">Add New Payment</b><small id="paymentFormSubtitle">Choose your preferred payment method</small></div>
+    <button class="paymentClose" onclick="closePaymentForm()" aria-label="Close">×</button>
+  </header>
+  <div class="paymentScroll">
+    <div class="paymentTypeTabs">
+      <button class="paymentTypeBtn active" data-kind="card" onclick="selectPaymentType(this)">💳 Card</button>
+      <button class="paymentTypeBtn" data-kind="upi" onclick="selectPaymentType(this)">UPI</button>
+      <button class="paymentTypeBtn" data-kind="qr" onclick="selectPaymentType(this)">▦ QR</button>
+      <button class="paymentTypeBtn" data-kind="bank" onclick="selectPaymentType(this)">🏦 Bank</button>
+      <button class="paymentTypeBtn" data-kind="cod" onclick="selectPaymentType(this)">📦 COD</button>
+    </div>
+    <section class="paymentFormCard" id="paymentCardFields">
+      <label><span>CARD HOLDER NAME</span><input id="payCardName" type="text" maxlength="60" placeholder="Enter name on card"></label>
+      <label><span>CARD NUMBER</span><input id="payCardNumber" type="tel" inputmode="numeric" maxlength="19" placeholder="1234 5678 9012 3456"></label>
+      <div class="paymentTwoCol"><label><span>EXPIRY</span><input id="payCardExpiry" type="text" maxlength="5" placeholder="MM/YY"></label><label><span>CVV</span><input id="payCardCvv" type="password" inputmode="numeric" maxlength="3" placeholder="•••"></label></div>
+    </section>
+    <section class="paymentFormCard" id="paymentUpiFields" style="display:none">
+      <label><span>UPI ID</span><input id="payUpiId" type="text" maxlength="80" placeholder="name@upi"></label>
+      <div class="upiHint">Example: yourname@oksbi, mobile@upi</div>
+    </section>
+    <section class="paymentFormCard" id="paymentQrFields" style="display:none">
+      <div class="qrPaymentBox"><div class="qrPaymentTitle"><b>UPI QR Code</b><small>Scan this QR with any UPI app</small></div><img class="demoQrImage" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALkAAAC5AQAAAABc1qPxAAAB8klEQVR42uWYQa6cMAyGfwNS2JkbhIuUvB6rEq8wwxwszEnCDcIuSAx/F/OW7daV2uziLL4k/m3HEeK341bhD+PfWVhFpH3iJlIBOD52Eams4EISA+rk4t5AIyYyml3JLj2wn/4I3bjtFV7S2vrjqdIz6uw1/g0xTCskP3D8tIUrE9jd+uNTjp4RNYsZnCIC2U6vSwbeuv+wgYMkyZWku3T+mpKzDXzl6QFdWKAn3PW2GcEjpsSVpy/AlAp0IYINvAJUQvute2yt5FcP4CV2gpONaa8wogzqEkKGd2YZbtBma8PWwN0Br/ed6ais1H4B4KUL3QWgDKiTldorAFOSOmM7vvMEhDOs4ryCZHhe+xHKKktyt26EneCeX2UMLmqDVjbp3d3Q576EXLNInlIJXAwzXMREDLqkAmVCIFmCFfxCzRIyfAGAMiiTVXqtAD36lt2UlHn0umyzWT0HozKRGZ4rl1QkW8Z52BpIpVzBDmiBH+Gwq+d5YoHO71xXBj29neCizh6S61Sg55dRrOAk+d4B9ASEpicH4CLqVCSPnmse4cwEJyQR3m+pZmuhM/bKtGNZ5VNcxOhBabxdnK8Z3l1KkhnAgNE7w3oOQLZ5kw9lcnc87DsW+LJ2D+wTmYw7lqeKKPOrb9fuJu3TBi7/7bfIL7nxP6+jl+BaAAAAAElFTkSuQmCC" alt="Amiyo Sarkar UPI QR Code"><div class="qrPaymentUpi">amiyo.sarkar@ptyes</div><div class="qrDemoNote">UPI QR • Scan &amp; pay using amiyo.sarkar@ptyes</div></div>
+    </section>
+    <section class="paymentFormCard" id="paymentBankFields" style="display:none">
+      <label><span>ACCOUNT HOLDER NAME</span><input id="payBankName" type="text" maxlength="60" placeholder="Enter account holder name"></label>
+      <label><span>BANK NAME</span><select id="payBankNameBank" class="paymentBankSelect"><option value="">Select your bank</option><option>State Bank of India</option><option>HDFC Bank</option><option>ICICI Bank</option><option>Axis Bank</option><option>Punjab National Bank</option><option>Bank of Baroda</option><option>Other</option></select></label>
+      <label><span>ACCOUNT NUMBER</span><input id="payBankAccount" type="tel" inputmode="numeric" maxlength="18" placeholder="Enter account number"></label>
+      <label><span>IFSC CODE</span><input id="payBankIfsc" type="text" maxlength="11" placeholder="SBIN0001234"></label>
+    </section>
+    <section class="paymentFormCard" id="paymentCodFields" style="display:none">
+      <div class="codInfo"><span>📦</span><div><b>Cash on Delivery</b><small>Pay when your order is delivered. Availability depends on the delivery location.</small></div></div>
+    </section>
+    <label class="paymentDefaultCheck"><input id="paymentMakeDefault" type="checkbox"><span>Set as default payment method</span></label>
+    <button class="savePaymentBtn" id="savePaymentBtn" type="button" onclick="savePaymentMethod()">Save Payment <b>✓</b></button>
+    <div class="paymentPrivacy">🔒 Your payment details are protected and encrypted.</div>
+  </div>
+</section>
+
+<!-- WISHLIST PAGE -->
+<section id="wishlistPage" class="wishlistPage" aria-hidden="true">
+  <div class="wishlistScreen">
+    <header class="wishlistHeader">
+      <button class="wishlistBack" onclick="closeWishlistPage()" aria-label="Back">‹</button>
+      <div class="wishlistHeadTitle">
+        <span class="wishlistHeart">♡</span>
+        <div><b>Wishlist</b><small id="wishlistCountText">0 items</small></div>
+      </div>
+      <button class="wishlistClose" onclick="closeWishlistPage()" aria-label="Close">×</button>
+    </header>
+    <div class="wishlistBody">
+      <div class="wishlistInfo" id="wishlistInfo">
+        <span>♡</span><div><b>Saved for later</b><small>Products you love, all in one place.</small></div>
+      </div>
+      <div id="wishlistGrid" class="wishlistGrid"></div>
+      <div id="wishlistEmpty" class="wishlistEmpty" style="display:none">
+        <div class="wishlistEmptyIcon">♡</div>
+        <h3>Your Wishlist is empty</h3>
+        <p>Save products you love and find them here anytime.</p>
+        <button onclick="closeWishlistPage();scrollHome()">Continue Shopping</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MY ORDERS PAGE -->
+<section id="sundariOrdersPage" class="sundariOrdersPage" aria-hidden="true">
+  <div class="ordersTop">
+    <button type="button" class="ordersBack" onclick="closeOrdersPage()" aria-label="Back">‹</button>
+    <div class="ordersTitle">My Orders</div>
+    <button type="button" class="ordersClose" onclick="closeOrdersPage()" aria-label="Close">×</button>
+  </div>
+  <div class="ordersTabs" id="ordersTabs">
+    <button class="active" data-filter="all" onclick="setOrderFilter('all',this)">All</button>
+    <button data-filter="toPay" onclick="setOrderFilter('toPay',this)">To Pay</button>
+    <button data-filter="toShip" onclick="setOrderFilter('toShip',this)">To Ship</button>
+    <button data-filter="toReceive" onclick="setOrderFilter('toReceive',this)">To Receive</button>
+    <button data-filter="delivered" onclick="setOrderFilter('delivered',this)">Delivered</button>
+  </div>
+  <div class="ordersContent">
+    <div class="ordersSearch">
+      <span>⌕</span>
+      <input id="ordersSearchInput" type="search" placeholder="Search your orders" oninput="renderOrdersPage()">
+    </div>
+    <div id="ordersList"></div>
+    <div id="ordersEmpty" class="ordersEmpty" style="display:none">
+      <div class="ordersEmptyIcon">📦</div>
+      <b>No orders found</b>
+      <p>Your orders will appear here after you place an order.</p>
+      <button onclick="closeOrdersPage();scrollHome()">Continue Shopping</button>
+    </div>
+  </div>
+</section>
+
+<!-- PROFILE & NAME PAGE -->
+<section id="sundariProfilePage" class="sundariProfilePage" aria-hidden="true">
+  <header class="profileTop">
+    <button type="button" class="profileBack" onclick="closeProfilePage()" aria-label="Back">‹</button>
+    <div class="profileTopText"><b>Profile &amp; Name</b><small>Manage your personal details</small></div>
+    <button type="button" class="profileClose" onclick="closeProfilePage()" aria-label="Close">×</button>
+  </header>
+  <div class="profileScroll">
+    <section class="profileIdentityCard">
+      <div class="profileAvatarWrap">
+        <div id="profileAvatarLarge" class="profileAvatarLarge">👤</div>
+        <button class="profileCameraBtn" type="button" onclick="document.getElementById('profilePagePhotoInput').click()" aria-label="Change profile photo">📷</button>
+        <input id="profilePagePhotoInput" type="file" accept="image/*" hidden onchange="saveProfilePagePhoto(event)">
+      </div>
+      <div id="profilePageName" class="profileDisplayName">Customer</div>
+      <div class="profileMemberBadge">✓ SUNDARI Member</div>
+      <button class="profilePhotoBtn" type="button" onclick="document.getElementById('profilePagePhotoInput').click()">Change Profile Photo</button>
+    </section>
+
+    <section class="profileCard profileInfoCard">
+      <div class="profileSectionHead">
+        <div><b>Personal Information</b><small>Keep your account details up to date</small></div>
+        <span>✦</span>
+      </div>
+
+      <label class="profileField">
+        <span>FULL NAME</span>
+        <div class="profileInputWrap"><i>👤</i><input id="profileNameInput" type="text" maxlength="50" placeholder="Enter your full name" autocomplete="name"></div>
+      </label>
+
+      <label class="profileField">
+        <span>MOBILE NUMBER</span>
+        <div class="profileInputWrap"><i>📱</i><input id="profileMobileInput" type="tel" maxlength="10" inputmode="numeric" placeholder="10-digit mobile number" autocomplete="tel"></div>
+      </label>
+
+      <label class="profileField">
+        <span>EMAIL ADDRESS</span>
+        <div class="profileInputWrap"><i>✉</i><input id="profileEmailInput" type="email" maxlength="80" placeholder="Enter your email address" autocomplete="email"></div>
+      </label>
+
+      <button class="profileSaveBtn" type="button" onclick="saveProfileDetails()"><span>Save Changes</span><b>✓</b></button>
+    </section>
+  </div>
+</section>
+
+<!-- START RESELLING SEPARATE PAGE -->
+<div class="sdResellStartPage" id="sdResellStartPage" aria-hidden="true">
+  <div class="sdRspShell">
+    <div class="sdRspHead">
+      <button type="button" onclick="closeResellStartPage()" aria-label="Back">‹</button>
+      <div class="sdRspHeadTitle">Start Reselling</div>
+      <button type="button" onclick="closeResellStartPage()" aria-label="Close">×</button>
+    </div>
+    <div class="sdRspBody">
+      <section class="sdRspSection">
+        <div class="sdRspKicker">Your selected product</div>
+        <div class="sdRspProduct">
+          <img id="sdRspImg" src="" alt="Product">
+          <div>
+            <b id="sdRspName">Selected Product</b>
+            <small>Current SUNDARI price: <strong id="sdRspBase">₹0</strong></small>
+          </div>
+        </div>
+      </section>
+
+      <section class="sdRspSection">
+        <div class="sdRspPriceTitle">Set your selling price</div>
+        <div class="sdRspInput"><span>₹</span><input id="sdRspPrice" type="number" min="1" inputmode="numeric" placeholder="Enter selling price" oninput="updateResellStartPage()"></div>
+        <div class="sdRspHint" id="sdRspHint">Set the amount your customer will pay.</div>
+        <div class="sdRspStats">
+          <div class="sdRspStat"><span>Customer will pay</span><b id="sdRspCustomer">₹0</b></div>
+          <div class="sdRspStat"><span>Your margin</span><b id="sdRspMargin">₹0</b></div>
+        </div>
+      </section>
+
+      <section class="sdRspSection">
+        <div class="sdRspKicker">Customer view</div>
+        <div class="sdRspPreview" style="margin-top:8px">
+          <div class="sdRspPreviewHead">SUNDARI • Your shared product</div>
+          <div class="sdRspCustomerCard">
+            <div id="sdRspPreviewName" style="font-size:12px;font-weight:850;color:#403942">Selected Product</div>
+            <div class="sdRspCustomerPrice" id="sdRspPreviewPrice">₹0 <small>customer price</small></div>
+            <div style="font-size:9px;color:#817a83">The customer sees the same selling price you set.</div>
+          </div>
+        </div>
+        <div class="sdRspShareGrid">
+          <button type="button" onclick="shareResellFromStart()">↗ Share Product</button>
+          <button type="button" onclick="copyResellFromStart()">Copy Link</button>
+        </div>
+      </section>
+
+      <section class="sdRspSection">
+        <div class="sdRspKicker">How reselling works</div>
+        <div class="sdRspSteps">
+          <div class="sdRspStep"><i>1</i><div><b>Set your selling price</b><small>Choose the customer price above the current SUNDARI price.</small></div></div>
+          <div class="sdRspStep"><i>2</i><div><b>Share your product link</b><small>Send the product to your customer using Share or Copy Link.</small></div></div>
+          <div class="sdRspStep"><i>3</i><div><b>Customer sees your price</b><small>Your selected selling price is shown on the shared product.</small></div></div>
+        </div>
+        <div class="sdRspTerms">By starting reselling, you confirm that the selling price and product information you share with customers are accurate.</div>
+        <div class="sdRspActiveBanner" id="sdRspActiveBanner">✓ Reselling is active for this product.</div>
+      </section>
+    </div>
+    <div class="sdRspBottom">
+      <button type="button" class="sdRspActivate" onclick="activateResellFromStart()">↗ Start Reselling</button>
+    </div>
+  </div>
+</div>
+
+<div id="modal" class="modal" onclick="if(event.target===this)closeModal()">
+  <div class="sheet">
+    <div class="sheetTop"><h3 id="modalTitle">SUNDARI</h3><button class="close" onclick="closeModal()">×</button></div>
+    <div id="modalBody"></div>
+  </div>
+</div>
+<div id="toast" class="toast"></div>
+
+<!-- Load generated 1000 items -->
+<script src="products.js"></script>
+<!-- Load application JavaScript -->
+<script src="app.js"></script>
+</body>
+</html>
